@@ -20,7 +20,8 @@ const Header = () => {
             <Link href="/">Home</Link>
           </li>
           <li className={clsx(css.headerMenuLink, pathname === "/catalog" && css.active)}>
-            <Link href="/catalog">Catalog</Link>            </li>
+            <Link href="/catalog">Catalog</Link>
+          </li>
         </ul>
       </nav>
     </header>

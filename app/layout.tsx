@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Travel Trucks",
+  title: "TravelTrucks",
   description: "Campers for rent for your adventure",
 };
 
@@ -19,8 +19,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
-      <body>
+    <html lang="en">
+      <head />
+      <body className={inter.variable}>
         <Header />
         <main className="container">
           {children}
