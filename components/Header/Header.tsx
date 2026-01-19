@@ -12,7 +12,7 @@ const Header = () => {
     <header className={css.header}>
       <nav className={css.headerNav}>
         <Link href="/" className={clsx(css.headerLogoLink, pathname === "/" && css.active)}>
-          <Image src="/images/travel-trucks-logo.svg" alt="TravelTrucks" width={136} height={16} />
+          <Image src="/images/travel-trucks-logo.svg" alt="TravelTrucks" width={136} height={16} priority />
         </Link>
       
         <ul className={css.headerMenu}>

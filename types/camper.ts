@@ -46,3 +46,8 @@ export type FilterState = {
     bathroom: boolean;
     form: string;
 }
+
+export type CamperListResponse = {
+    campers: Camper[];
+    total: number;
+}
