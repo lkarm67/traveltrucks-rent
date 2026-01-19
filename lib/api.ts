@@ -1,16 +1,14 @@
-import axios from "axios";
 import { Camper } from "@/types/camper";
 
-axios.defaults.baseURL = process.env.NEXT_PUBLIC_API_URL;
-
-// api.ts
-export const getCampers = async () => {
-  const res = await axios.get<Camper[]>("/campers");
-
-  return {
-    campers: res.data,
-    total: res.data.length,
+export type GetCampersResponse = {
+  campers: {
+    total: number;
+    items: Camper[];
   };
 };
 
-
+export const getCampers = async (): Promise<GetCampersResponse> => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/campers`);
+  if (!res.ok) throw new Error("Failed to fetch campers");
+  return res.json();
+};
