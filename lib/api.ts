@@ -7,8 +7,11 @@ export type GetCampersResponse = {
   };
 };
 
-export const getCampers = async (): Promise<GetCampersResponse> => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/campers`);
+export const getCampers = async (
+  page = 1,
+  limit = 4
+): Promise<GetCampersResponse> => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/campers?page=${page}&limit=${limit}`);
   if (!res.ok) throw new Error("Failed to fetch campers");
   return res.json();
 };

@@ -1,4 +1,6 @@
 .catalogPage{
+  max-width: 1440px;
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
   padding: 0 64px;
@@ -6,12 +8,16 @@
 }
 
 .sideBar{
-
+  max-width: 360px;
+  flex-shrink: 0;
 }
 
 .mainCatalog{
+  max-width: 888px;
+  flex-grow: 1;
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
+  align-items: center;  
   gap: 80px;  
   margin-bottom: 60px;
 }

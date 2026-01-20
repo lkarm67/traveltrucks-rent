@@ -13,7 +13,7 @@ const CatalogPage = () => {
 
   useEffect(() => {
     const fetchCampers = async () => {
-      const response = await getCampers();
+      const response = await getCampers(page);
       setCampers(prev => [...prev, ...response.items]);
     };
 
