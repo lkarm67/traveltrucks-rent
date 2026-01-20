@@ -1,0 +1,17 @@
+.catalogPage{
+  display: flex;
+  flex-direction: row;
+  padding: 0 64px;
+  gap: 64px;
+}
+
+.sideBar{
+
+}
+
+.mainCatalog{
+  display: flex;
+  flex-direction: column;  
+  gap: 80px;  
+  margin-bottom: 60px;
+}
