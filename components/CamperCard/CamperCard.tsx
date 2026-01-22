@@ -6,12 +6,14 @@ type CamperCardProps = {
   camper: Camper;
   isFavorite: boolean;
   onToggleFavorite: (id: string) => void;
+  isFirst?: boolean;
 };
 
 const CamperCard = ({
   camper,
   isFavorite,
   onToggleFavorite,
+  isFirst = false,
 }: CamperCardProps) => {
   return (
     <div className={css.camperCard}>
@@ -22,7 +24,9 @@ const CamperCard = ({
               src={camper.gallery[0].original}
               alt={camper.name}
               fill
+              sizes="(max-width: 768px) 100vw, 292px"
               className={css.image}
+              priority={isFirst}
             />
           ) : (
             <div className={css.noImage}>No image</div>

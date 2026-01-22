@@ -10,6 +10,15 @@ import { Camper } from "@/types/camper";
 const CatalogPage = () => {
   const [campers, setCampers] = useState<Camper[]>([]);
   const [page, setPage] = useState(1);
+  const [favorites, setFavorites] = useState<string[]>([]);
+  const toggleFavorite = (id: string) => {
+    setFavorites(prev =>
+      prev.includes(id)
+        ? prev.filter(favId => favId !== id)
+        : [...prev, id]
+    );
+  };
+
 
   useEffect(() => {
     const fetchCampers = async () => {
@@ -31,7 +40,11 @@ const CatalogPage = () => {
       </aside>
       <section className={css.mainCatalog}>
         {campers.length > 0 ? (
-          <CamperGridBlock campers={campers} />
+          <CamperGridBlock 
+            campers={campers}
+            favorites={favorites}
+            onToggleFavorite={toggleFavorite}
+          />
         ) : (
           <p>No campers found.</p>
         )}
