@@ -48,6 +48,6 @@ export type FilterState = {
 }
 
 export type CamperListResponse = {
-    campers: Camper[];
+    items: Camper[];
     total: number;
 }

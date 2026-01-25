@@ -22,8 +22,13 @@ const CatalogPage = () => {
 
   useEffect(() => {
     const fetchCampers = async () => {
-      const response = await getCampers(page);
-      setCampers(prev => [...prev, ...response.items]);
+      try {
+        const response = await getCampers(page);
+        console.log("API response:", response);
+        setCampers(prev => [...prev, ...response.items]);
+      } catch (e) {
+        console.error("Fetch campers failed", e);
+      }  
     };
 
     fetchCampers();

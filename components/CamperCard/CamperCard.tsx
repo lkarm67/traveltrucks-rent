@@ -44,7 +44,7 @@ const CamperCard = ({
 
               <button
                 type="button"
-                className={`${css.favoriteBotton} ${
+                className={`${css.heartBotton} ${
                   isFavorite ? css.active : ""
                 }`}
                 onClick={() => onToggleFavorite(camper.id)}
@@ -55,8 +55,96 @@ const CamperCard = ({
               </button>
             </div>
           </div>
+          <div className={css.detailsBox}>
+            <div className={css.reviews}>
+              <svg className={css.starReting} width="15" height="14">
+                  <use href="/icons/sprite.svg#icon-empty-star" />
+              </svg>
+              <span>
+                {camper.rating} ({camper.reviews.length} Reviews)
+              </span>                     
+            </div>
+            <div className={css.location}>
+              <svg className={css.mapIcon} width="16" height="16">
+                <use href="/icons/sprite.svg#icon-map" />
+              </svg>
+              <span>
+                {camper.location}
+              </span>
+            </div>
+          </div>
+          
+          <p className={css.textSupport}>{camper.description}</p>
 
-          <p>{camper.location}</p>
+          <ul className={css.cardBadges}>
+            <li className={css.badge}>
+              <svg className={css.iconBadge}>
+                <use href="/icons/sprite.svg#icon-water" />
+              </svg>
+              <span>Water</span> 
+            </li>
+            <li className={css.badge}>
+              <svg className={css.iconBadge}>
+                <use href="/icons/sprite.svg#icon-water" />
+              </svg>
+              <span>Water</span> 
+            </li>
+            <li className={css.badge}>
+              <svg className={css.iconBadge}>
+                <use href="/icons/sprite.svg#icon-ac" />
+              </svg>
+              <span>AC</span> 
+            </li>
+            <li className={css.badge}>
+              <svg className={css.iconBadge}>
+                <use href="/icons/sprite.svg#icon-kitchen" />
+              </svg>
+              <span>Kitchen</span> 
+            </li>
+            <li className={css.badge}>
+              <svg className={css.iconBadge}>
+                <use href="/icons/sprite.svg#icon-tv" />
+              </svg>
+              <span>TV</span> 
+            </li>
+            <li className={css.badge}>
+              <svg className={css.iconBadge}>
+                <use href="/icons/sprite.svg#icon-bathroom" />
+              </svg>
+              <span>Bathroom</span> 
+            </li>
+            <li className={css.badge}>
+              <svg className={css.iconBadge}>
+                <use href="/icons/sprite.svg#icon-refridgerator" />
+              </svg>
+              <span>Refridgerator</span> 
+            </li>
+            <li className={css.badge}>
+              <svg className={css.iconBadge}>
+                <use href="/icons/sprite.svg#icon-microwave" />
+              </svg>
+              <span>Microwave</span> 
+            </li>
+            <li className={css.badge}>
+              <svg className={css.iconBadge}>
+                <use href="/icons/sprite.svg#icon-gas" />
+              </svg>
+              <span>Gas</span> 
+            </li>
+            <li className={css.badge}>
+              <svg className={css.iconBadge}>
+                <use href="/icons/sprite.svg#icon-radio" />
+              </svg>
+              <span>Radio</span> 
+            </li>
+            <li className={css.badge}>
+              <svg className={css.iconBadge}>
+                <use href="/icons/sprite.svg#icon-water" />
+              </svg>
+              <span>Water</span> 
+            </li>
+
+          </ul>  
         </div>
       </div>
     </div>
