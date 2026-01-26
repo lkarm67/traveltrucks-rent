@@ -2,15 +2,17 @@ import css from "./LoadMoreBtn.module.css";
 
 type LoadMoreBtnProps = {
   onClick: () => void;
+  disabled?: boolean;
 };
 
-const LoadMoreBtn = ({ onClick }: LoadMoreBtnProps) => {
+const LoadMoreBtn = ({ onClick, disabled }: LoadMoreBtnProps) => {
   return (
     <button
       onClick={onClick}
+      disabled={disabled}
       className={css.loadMoreButton}
     >
-      Load more
+      {disabled ? "Loading..." : "Load more"}
     </button>
   );
 };

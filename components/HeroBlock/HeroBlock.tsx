@@ -1,7 +1,7 @@
 "use client";
 
 import css from './Heroblock.module.css';
-import Link from 'next/link'; 
+import Link from 'next/link';
 
 const HeroBlock = () => { 
     return (
@@ -14,7 +14,7 @@ const HeroBlock = () => {
             </div>
             <Link
                 href="/catalog"
-                className={css.button}
+                className="buttonAnchor"
             >
               View Now
             </Link>

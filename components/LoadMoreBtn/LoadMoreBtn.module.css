@@ -18,3 +18,8 @@
 .loadMoreButton:focus{
     border: 1px solid var(--button-hover);
 }
+
+.loadMoreButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
