@@ -51,7 +51,7 @@ const CamperCard = ({
                   }`}
                   onClick={() => onToggleFavorite(camper.id)}
                 >
-                  <svg className={css.heartIcon}>
+                  <svg className={css.heartIcon} width="25" height="24">
                     <use href="/icons/sprite.svg#icon-black-heart" />
                   </svg>
                 </button>

@@ -37,9 +37,8 @@
 .titleBox{
     display: flex;
     flex-direction: row;
-    justify-content: flex;
+    justify-content: space-between;
     align-items: flex-start;
-    gap: 136px;
     margin-bottom: 8px;
 }
 
@@ -54,7 +53,7 @@
 .priceBox{
     display: flex;
     flex-direction: row;
-    gap: 8px;
+    gap: 12px;
     padding: 0;
 }
 
@@ -67,21 +66,15 @@
 }
 
 .heartBotton{
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-color: #fff;
-    width: 18px;
-    height: 18px;
-    padding: 0;
+    padding: 4px;
     border: none;
     cursor: pointer;
-    flex-shrink: 0;
 }
 
 .heartIcon{
-    display: block;
-    width: 120%;
+    width: 25px;
+    height: 24px;
 }
 
 .active{
@@ -129,6 +122,7 @@
     display: grid;
     grid-template-columns: repeat(3, max-content);
     gap: 8px;
+    margin-bottom: 8px;
 }
 
 .badge{
