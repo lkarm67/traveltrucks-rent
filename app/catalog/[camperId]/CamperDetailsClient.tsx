@@ -12,14 +12,13 @@ type Tab = "features" | "reviews";
 
 type Props = {
   camper: Camper;
-  camperId: string;
 };
 
-const CamperDetailsClient = ({ camper, camperId }: Props) => {
+const CamperDetailsClient = ({ camper }: Props) => {
   const [activeTab, setActiveTab] = useState<Tab>("features");
 
   return (
-    <>
+    <div className={css.camperDetailsWrapper}>
       <FeaturesReviewsTab
         activeTab={activeTab}
         onChange={setActiveTab}
@@ -31,11 +30,12 @@ const CamperDetailsClient = ({ camper, camperId }: Props) => {
           {activeTab === "reviews" && <Reviews reviews={camper.reviews} />}
         </div>
 
-        <div className={css.rightColumn}>
-          <BookingForm camperId={camperId} />
-        </div>
+        <aside className={css.rightColumn}>
+          <BookingForm camper={camper} />
+        </aside>
       </div>
-    </>
+    </div>
+
   );
 };
 

@@ -11,7 +11,7 @@ const CamperDetailsPage = async ({ params }: { params: Promise<{ camperId: strin
   return (
     <>
       <CamperItem item={camper} />
-      <CamperDetailsClient camper={camper} camperId={camperId} />
+      <CamperDetailsClient camper={camper} />
     </>
   );
 };

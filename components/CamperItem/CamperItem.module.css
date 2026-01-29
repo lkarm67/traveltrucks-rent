@@ -1,7 +1,8 @@
 .camperItem{
+    max-width: 1440px;
     display: flex;
     flex-direction: column;
-    padding: 0 64px;
+    padding: 0 100px;
     gap: 28px;
 }
 

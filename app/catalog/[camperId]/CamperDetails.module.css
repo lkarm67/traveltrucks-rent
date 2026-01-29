@@ -1,9 +1,25 @@
 .camperDetailsWrapper{
     max-width: 1440px;
-    height: calc(100vh - 72px);
+    min-height: calc(100vh - 72px);
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    padding: 48px 64px;
-    gap: 54px;
+    padding: 0 64px;
+    gap: 40px;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 641px;
+  gap: 40px;
+}
+
+.leftColumn{
+    min-width: 0;
+}
+
+.rightColumn {
+    position: sticky;
+    top: 72px;
+    align-self: start;
 }
