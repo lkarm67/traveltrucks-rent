@@ -2,15 +2,10 @@
 
 import { useRouter } from "next/navigation";
 import css from "./not-found.module.css";
-import { useEffect } from "react";
 
 const NotFound = () => {
   const router = useRouter();
 
-  useEffect(() => {
-    const timer = setTimeout(() => router.push("/"), 3000);
-    return () => clearTimeout(timer);
-  }, [router]);
   return (
     <div className={css.wrapper}>
       <h1 className={css.title}>404 - Page not found</h1>
@@ -23,10 +18,8 @@ const NotFound = () => {
       >
         Go to home
       </button>
-
     </div>
   );
-
 };
 
 export default NotFound;
