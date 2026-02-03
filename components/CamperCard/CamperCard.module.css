@@ -34,29 +34,28 @@
     min-width: 0;
 }
 
+.header{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
 .titleBox{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 8px;
-}
-
-.cardTitle{
-    font-family: var(--font-family);
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 133%;
-    color: var(--main); 
 }
 
 .priceBox{
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     gap: 12px;
-    padding: 0;
+    padding: 4px;
 }
 
+.cardTitle,
 .price{
     font-family: var(--font-family);
     font-weight: 600;
@@ -65,19 +64,29 @@
     color: var(--main);
 }
 
-.heartBotton{
+.heartBotton {
     background-color: #fff;
-    padding: 4px;
+    padding: 0;
     border: none;
     cursor: pointer;
-}
-
-.heartIcon{
-    width: 25px;
+    width: 24px;
     height: 24px;
+        /* трохи більше висоти, щоб не обрізало */
+        display: inline-flex;
+        /* центруємо іконку */
+        align-items: center;
+        justify-content: center;
+        overflow: visible;
 }
 
-.active{
+.heartIcon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    fill: var(--text);
+}
+
+.active {
     fill: var(--button);
 }
 

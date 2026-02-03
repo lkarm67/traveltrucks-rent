@@ -8,6 +8,9 @@ import * as Yup from "yup";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import css from "./BookingForm.module.css";
+import toast, { Toaster } from "react-hot-toast";
+import { enUS } from 'date-fns/locale';
+
 
 type BookingFormProps = {
   camper: Camper;
@@ -53,15 +56,15 @@ const FormikDatePicker = ({ field, form }: FieldProps) => {
         }}
         className={`${css.input} ${css.dateInput}`}
         dateFormat="dd/MM/yyyy"
+        formatWeekDay={(nameOfDay) => nameOfDay.slice(0, 3)}
+        locale={enUS}
+        required
       />
-      {focused && !field.value && (
-        <p className={css.helper}>Select a date between today</p>
-      )}
     </div>
   );
 };
 
-const BookingForm: React.FC<BookingFormProps> = ({ camper }) => {
+const BookingForm: React.FC<BookingFormProps> = () => {
   const initialValues: BookingFormValues = {
     name: "",
     email: "",
@@ -69,16 +72,27 @@ const BookingForm: React.FC<BookingFormProps> = ({ camper }) => {
     comment: "",
   };
 
-  const handleSubmit = (
-    values: BookingFormValues,
-    actions: FormikHelpers<BookingFormValues>
-  ) => {
-    console.log("Booking submitted for camper:", camper.name, values);
+const handleSubmit = (
+  values: BookingFormValues,
+  actions: FormikHelpers<BookingFormValues>
+) => {
+  try {
+    toast.success("Booking completed successfully!", {
+      duration: 2000,
+      position: "top-right",
+    });
+
     actions.resetForm();
-  };
+  } catch {
+    toast.error("Booking failed. Please try again.");
+  } finally {
+    actions.setSubmitting(false); // важливо, щоб кнопка розблокувалася
+  }
+};
 
   return (
     <div className={css.bookingForm}>
+      <Toaster />
       <div className={css.titleBox}>
         <h3 className={css.title}>Book your campervan now</h3>
         <p className={css.text}>Stay connected! We are always ready to help you.</p>
@@ -98,6 +112,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ camper }) => {
                   name="name"
                   placeholder="Name*"
                   className={css.input}
+                  required
                 />
                 <ErrorMessage name="name" component="span" className={css.error} />
               </div>
@@ -108,6 +123,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ camper }) => {
                   name="email"
                   placeholder="Email*"
                   className={css.input}
+                  required
                 />
                 <ErrorMessage name="email" component="span" className={css.error} />
               </div>
@@ -128,7 +144,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ camper }) => {
               </div>
             </div>
 
-            <button type="submit" disabled={isSubmitting} className="buttonAnchor">
+            <button type="submit" disabled={isSubmitting} className={css.sendBtn}>
               Send
             </button>
           </Form>

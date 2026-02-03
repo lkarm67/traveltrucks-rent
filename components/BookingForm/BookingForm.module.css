@@ -46,13 +46,67 @@
 .fieldGroup{
     display: flex;
     flex-direction: column;
-    border-radius: 12px;
     padding: 0;
-    max-width: 527px;
 }
 
-.datePickerWrapper{
-    width: 100%;
+:global(.react-datepicker) {
+    border-radius: 16px;
+    border: 1px solid var(--gray);
+    overflow: hidden;
+}
+
+:global(.react-datepicker__header) {
+    background-color: #fff;
+    border-radius: 16px;
+    border-bottom: none;
+    font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 120%;
+        text-align: center;
+        color: var(--main);
+}
+
+:global(.react-datepicker__day-names) {
+    border-bottom: 1px solid var(--gray);
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+}
+
+:global(.react-datepicker__day) {
+    border-radius: 50%;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+:global(.react-datepicker__day:hover) {
+    background-color: var(--gray-light);
+    color: #fff;
+    border-radius: 50%;
+}
+
+:global(.react-datepicker__day--today) {
+    background-color: var(--text);
+    color: #fff;
+    border-radius: 50%;
+    font-weight: 600;
+}
+
+:global(.react-datepicker__day:hover) {
+    background-color: var(--gray-light);
+    color: var(--text);
+    border-radius: 50%;
+}
+
+:global(.react-datepicker__day--selected) {
+    background-color: var(--button);
+    color: #fff;
+    border-radius: 50%;
+}
+
+:global(.react-datepicker__day--selected:hover) {
+    background-color: var(--button-hover);
+    color: #fff;
+    border-radius: 50%;
 }
 
 .input{
@@ -74,6 +128,7 @@
     outline: none;
     box-shadow: none;
     border: none;
+    background-color: var(--inputs);
 }
 
 .helper {
@@ -105,6 +160,12 @@
     border: none;
 }
 
+.textarea:focus {
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+
 .fieldGroup:has(.error) .input {
   border-color: var(--button);
 }
@@ -115,9 +176,29 @@
   color: var(--button);
 }
 
+.sendBtn{
+    border-radius: 200px;
+    border: none;
+    align-self: center;
+    cursor: pointer;
+        padding: 16px 60px;
+        width: 166px;
+        height: 56px;
+        background: var(--button);
+        font-family: var(--font-family);
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 150%;
+            letter-spacing: -0.01em;
+            color: var(--white);
+}
 
-.buttonAnchor:disabled {
+.sendBtn:hover
+.sendBtn:focus{
+    background-color: var(--button-hover);
+}
+
+.sendBtn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
-

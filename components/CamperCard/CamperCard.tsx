@@ -38,12 +38,11 @@ const CamperCard = ({
           <div className={css.header}>
             <div className={css.titleBox}>
               <h2 className={css.cardTitle}>{camper.name}</h2>
-
+  
               <div className={css.priceBox}>
                 <p className={css.price}>
                   €{camper.price.toFixed(2)}
                 </p>
-
                 <button
                   type="button"
                   className={`${css.heartBotton} ${
@@ -51,13 +50,12 @@ const CamperCard = ({
                   }`}
                   onClick={() => onToggleFavorite(camper.id)}
                 >
-                  <svg className={css.heartIcon} width="25" height="24">
-                    <use href="/icons/sprite.svg#icon-black-heart" />
+                  <svg className={css.heartIcon} width="25" height="24" aria-label="Add to favorites">
+                    <use href="/icons/sprite.svg#icon-heart" />
                   </svg>
                 </button>
               </div>
             </div>
-          
             <div className={css.detailsBox}>
                 <div className={css.reviews}>
                   <svg className={css.starReting} width="15" height="14">

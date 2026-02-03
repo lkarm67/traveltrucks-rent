@@ -1,23 +1,34 @@
 import { Camper } from "@/types/camper";
+import { CamperFilters } from "@/types/filters";
 
 export type GetCampersResponse = {
   items: Camper[];
   total: number;
 };
 
-
 export const getCampers = async (
   page = 1,
-  limit = 4
-): Promise<GetCampersResponse> => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/campers?page=${page}&limit=${limit}`,
-    { cache: "no-store" }
-  );
+  limit = 4,
+  filters?: CamperFilters
+) => {
+  const params = new URLSearchParams({
+    page: String(page),
+    limit: String(limit),
+    ...(filters && Object.fromEntries(
+      Object.entries(filters).filter(([, v]) => v !== undefined)
+    )),
+  });
 
-  if (!res.ok) throw new Error("Failed to fetch campers");
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/campers?${params.toString()}`
+  );
+  if (!res.ok) {
+    throw new Error("Failed to fetch campers");
+ }
+
   return res.json();
 };
+
 
 export const getCamperById = async (id: string): Promise<Camper> => {
   console.log("🚐 camperId =", id);

@@ -36,18 +36,3 @@ export type CamperReview = {
     reviewer_rating: number;
     comment: string;
 }
-
-export type FilterState = {
-    location?: string;
-    AC: boolean;
-    transmition: string;
-    kitchen: boolean;
-    TV: boolean;
-    bathroom: boolean;
-    form: string;
-}
-
-export type CamperListResponse = {
-    items: Camper[];
-    total: number;
-}

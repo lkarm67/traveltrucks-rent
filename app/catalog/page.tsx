@@ -1,66 +1,38 @@
 'use client';
 
-import { useState, useEffect } from "react";
-import { getCampers } from "@/lib/api";
+import { useEffect } from "react";
 import CamperGridBlock from "@/components/CamperGridBlock/CamperGridBlock";
-import css from "./catalogPage.module.css";
+import FiltersBlock from "@/components/FiltersBlock/FiltersBlock";
 import LoadMoreBtn from "@/components/LoadMoreBtn/LoadMoreBtn";
-import { Camper } from "@/types/camper";
+import { useCamperStore } from "@/lib/store";
+
+import css from "./catalogPage.module.css";
 
 const CatalogPage = () => {
-  const [campers, setCampers] = useState<Camper[]>([]);
-  const [page, setPage] = useState(1);
-  const [total, setTotal] = useState(0);
-  const [isLoading, setIsLoading] = useState(false);
-  const [favorites, setFavorites] = useState<string[]>([]);
-  const toggleFavorite = (id: string) => {
-    setFavorites(prev =>
-      prev.includes(id)
-        ? prev.filter(favId => favId !== id)
-        : [...prev, id]
-    );
-  };
+  const {
+    items: campers,
+    favorites,
+    toggleFavorite,
+    loadCampers,
+    loadMore,
+    hasMore,
+    isLoading,
+  } = useCamperStore();
 
+  // Завантажуємо лише першу сторінку один раз
   useEffect(() => {
-    const fetchCampers = async () => {
-      try {
-        setIsLoading(true);
-
-        const response = await getCampers(page);
-
-        setCampers(prev => {
-          const newCampers = response.items.filter(
-            camper => !prev.some(p => p.id === camper.id)
-          );
-          return [...prev, ...newCampers];
-        });
-
-        setTotal(response.total);
-      } catch (e) {
-        console.error(e);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchCampers();
-  }, [page]);
-
-
-  const handleLoadMore = () => {
-    setPage(prev => prev + 1);
-  };
-
-  const hasMore = campers.length < total;
+    loadCampers(1);
+  }, [loadCampers]);
 
   return (
-    <div className={css.catalogPage}>  
+    <div className={css.catalogPage}>
       <aside className={css.sidebar}>
-          
+        <FiltersBlock />
       </aside>
+
       <section className={css.mainCatalog}>
         {campers.length > 0 ? (
-          <CamperGridBlock 
+          <CamperGridBlock
             campers={campers}
             favorites={favorites}
             onToggleFavorite={toggleFavorite}
@@ -71,15 +43,12 @@ const CatalogPage = () => {
 
         {hasMore && (
           <LoadMoreBtn
-            onClick={handleLoadMore}
+            onClick={loadMore}
             disabled={isLoading}
           />
         )}
-
-
-
       </section>
-    </div>  
+    </div>
   );
 };
 
