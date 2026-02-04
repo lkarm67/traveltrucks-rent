@@ -28,7 +28,7 @@ export default function RootLayout({
       <body className={inter.variable}>
         <TanStackProvider>
           <Header />
-          <Toaster />
+          
           <main className="container">
             {children}
           </main>

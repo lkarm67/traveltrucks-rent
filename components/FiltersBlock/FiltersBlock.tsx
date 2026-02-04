@@ -8,9 +8,10 @@ const FiltersBlock = () => {
 
   return (
     <div className={css.filtersContainer}>
-      <div>
-        <label htmlFor="location">
-          <div className={css.locationLabel}>
+      <div className={css.locationBox}>
+        <label htmlFor="location" className={css.locationLabel}>
+          Location
+          <div className={css.inputBox}>
             <svg className={css.mapIcon} width="16" height="16">
               <use href="/icons/sprite.svg#icon-map" />
             </svg>
@@ -24,13 +25,13 @@ const FiltersBlock = () => {
               className={css.locationInput}
             />
           </div>
-          Location
         </label>
       </div>
       <p className={css.filtersText}>Filters</p>
-      <div className={css.equipmentFilters}>
+      <div className={css.filtersBox}>
         <h3 className={css.filtersTitle}>Vehicle equipment</h3>
         <hr className={css.devider} />
+        <div className={css.bottonsBox}>
         <button
           className={filters.AC ? css.active : css.filtersBtn}
           onClick={() => setFilters({ AC: !filters.AC })}
@@ -42,7 +43,7 @@ const FiltersBlock = () => {
         </button>
         <button
           className={filters.transmission === "automatic" ? css.active : css.filtersBtn}
-          onClick={() => setFilters({ transmission: filters.transmission === "automatic" ? "" : "automatic" })}
+          onClick={() => setFilters({ transmission: filters.transmission === "automatic" ? undefined : "automatic" })}
         >
           <svg className={css.filterIcon} width="32" height="32">
             <use href="/icons/sprite.svg#icon-automatic" />
@@ -76,35 +77,47 @@ const FiltersBlock = () => {
           </svg>
           <span>Bathroom</span>
         </button>
+        </div>
       </div>
 
-      <div className={css.typesFilters}>
+      <div className={css.typesBox}>
         <h3 className={css.filtersTitle}>Vehicle type</h3>
         <hr className={css.devider} />
+        <div className={css.bottonsBox}>
         <button
           className={filters.form === "van" ? css.active : css.filtersBtn}
           onClick={() => setFilters({ form: "van" })}
-        >
+        > 
+          <svg className={css.filterIcon} width="32" height="32">
+            <use href="/icons/sprite.svg#icon-bi_grid-1x2" />
+          </svg>
           <span>Van</span>
         </button>
         <button
           className={filters.form === "fully_integrated" ? css.active : css.filtersBtn}
           onClick={() => setFilters({ form: "fully_integrated" })}
         >
+          <svg className={css.filterIcon} width="32" height="32">
+            <use href="/icons/sprite.svg#icon-bi_grid-2x2" />
+          </svg>
           <span>Fully Integrated</span>
         </button>
         <button
           className={filters.form === "alcove" ? css.active : css.filtersBtn}
           onClick={() => setFilters({ form: "alcove" })}
         >
+          <svg className={css.filterIcon} width="32" height="32">
+            <use href="/icons/sprite.svg#icon-bi_grid-3x3" />
+          </svg>
           <span>Alcove</span>
         </button>
+        </div>
       </div>
 
       <button
         type="button"
-        className={css.searchBtn}
-        onClick={loadCampers}
+        className="buttonAnchor"
+        onClick={() => loadCampers()}
       >
         Search
       </button>

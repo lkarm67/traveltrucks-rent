@@ -1,0 +1,125 @@
+.filtersContainer{
+    display: flex;
+    flex-direction: column;
+    padding-top: 52px;
+    width: 360px; 
+  box-sizing: border-box;
+}
+
+.locationBox{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 36px;
+}
+.locationLabel{
+    font-family: var(--font-family);
+font-weight: 400;
+font-size: 16px;
+line-height: 150%;
+color: var(--gray);
+}
+
+.inputBox{
+    border-radius: 12px;
+padding: 18px 20px;
+width: 360px;
+height: 56px;
+display: flex;
+flex-direction: row;
+align-items: center;
+gap: 8px;
+background-color: var(--inputs);
+color: var(--gray);
+}
+
+.mapIcon{
+    fill: var(--main);
+}
+
+.locationInput{
+    font-family: var(--font-family);
+font-weight: 400;
+font-size: 16px;
+line-height: 150%;
+color: var(--gray);
+border: none;
+background-color: transparent;
+padding: 2px 0;
+}
+
+.locationInput:focus{
+    outline: none;
+    color: var(--main);
+}
+
+.filtersText{
+    font-family: var(--font-family);
+font-weight: 500;
+font-size: 16px;
+line-height: 150%;
+color: var(--text);
+margin-bottom: 36px;
+}
+
+.filtersBox{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 28px;
+}
+
+.devider{
+    stroke-width: 1px;
+stroke: var(--gray-light);
+}
+
+.bottonsBox{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px 8px;
+}
+
+.filtersBtn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 112px;
+    height: 96px;
+    gap: 8px;
+    border: 1px solid var(--gray-light);
+    border-radius: 12px;
+    background-color: var(--white);
+    color: var(--main);
+    font-family: var(--font-family);
+font-weight: 500;
+font-size: 16px;
+line-height: 150%;
+letter-spacing: -0.01em;
+text-align: center;
+flex-shrink: 0;
+}
+
+.filtersBtn.active{
+    border: 1px solid var(--button);
+    cursor: pointer;
+}
+
+.filtersBtn:focus-visible {
+  outline: none;
+  border: 1px solid var(--button);
+}
+
+.filterIcon{
+    fill: var(--main);
+}
+
+.typesBox{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 40px;
+}
+

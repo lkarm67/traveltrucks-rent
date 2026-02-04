@@ -62,10 +62,8 @@ export const useCamperStore = create<CamperStore>()(
       setFilters: newFilters =>
         set(() => ({
           filters: { ...get().filters, ...newFilters },
-          items: [],
-          page: 1,
-          hasMore: true,
-        })),
+      })),
+
 
       resetFilters: () =>
         set(() => ({
@@ -82,6 +80,6 @@ export const useCamperStore = create<CamperStore>()(
             : [...state.favorites, id],
         })),
     }),
-    { name: "favorites" }
+    { name: "camper-store" }
   )
 );
