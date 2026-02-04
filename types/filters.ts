@@ -12,17 +12,17 @@ export interface Filters {
   TV: boolean;
   bathroom: boolean;
 }
+// Тип для API
+export type ApiForm = "panelTruck" | "fullyIntegrated" | "alcove";
 
 export type CamperFilters = {
   location?: string;
   transmission?: "manual" | "automatic";
-  engine?: "diesel" | "petrol" | "hybrid";
-  equipment?: {
-    AC?: boolean;
-    kitchen?: boolean;
-    TV?: boolean;
-    bathroom?: boolean;
-  };
-  form?: string;
+  form?: ApiForm;
+  AC?: true;
+  kitchen?: true;
+  TV?: true;
+  bathroom?: true;
 };
+
 

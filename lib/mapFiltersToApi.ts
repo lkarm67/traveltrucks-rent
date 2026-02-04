@@ -1,14 +1,25 @@
-import { Filters } from "@/types/filters";
-import { CamperFilters } from "@/types/filters";
+import { Filters, CamperFilters, ApiForm } from "@/types/filters";
 
-export const mapFiltersToApi = (filters: Filters): Partial<CamperFilters> => ({
+// Фронт → бекенд (camelCase для MockAPI)
+const formMap: Partial<Record<Filters["form"], ApiForm>> = {
+  van: "panelTruck",
+  fully_integrated: "fullyIntegrated",
+  alcove: "alcove",
+};
+
+// Маппінг локації: будь-яке місто → "Ukraine, Місто"
+const mapLocationToBackend = (location: string) => {
+  if (!location) return undefined;
+  const trimmed = location.trim();
+  return trimmed.includes("Ukraine") ? trimmed : `Ukraine, ${trimmed}`;
+};
+
+export const mapFiltersToApi = (filters: Filters): CamperFilters => ({
   transmission: filters.transmission || undefined,
-  location: filters.location || undefined,
-  equipment: {
-    AC: filters.AC || undefined,
-    kitchen: filters.kitchen || undefined,
-    TV: filters.TV || undefined,
-    bathroom: filters.bathroom || undefined,
-  },
-  form: filters.form || undefined,
+  location: mapLocationToBackend(filters.location),
+  ...(filters.form ? { form: formMap[filters.form] } : {}),
+  ...(filters.AC ? { AC: true } : {}),
+  ...(filters.kitchen ? { kitchen: true } : {}),
+  ...(filters.TV ? { TV: true } : {}),
+  ...(filters.bathroom ? { bathroom: true } : {}),
 });
