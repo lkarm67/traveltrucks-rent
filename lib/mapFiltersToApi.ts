@@ -11,7 +11,7 @@ const formMap: Partial<Record<Filters["form"], ApiForm>> = {
 const mapLocationToBackend = (location: string) => {
   if (!location) return undefined;
   const trimmed = location.trim();
-  return trimmed.includes("Ukraine") ? trimmed : `Ukraine, ${trimmed}`;
+  return trimmed.includes("Ukraine") ? trimmed : `${trimmed}, Ukraine`;
 };
 
 export const mapFiltersToApi = (filters: Filters): CamperFilters => ({

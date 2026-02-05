@@ -77,6 +77,7 @@ const handleSubmit = (
   actions: FormikHelpers<BookingFormValues>
 ) => {
   try {
+    console.log("SUBMIT", values);
     toast.success("Booking completed successfully!", {
       duration: 2000,
       position: "top-right",
@@ -86,7 +87,7 @@ const handleSubmit = (
   } catch {
     toast.error("Booking failed. Please try again.");
   } finally {
-    actions.setSubmitting(false); // важливо, щоб кнопка розблокувалася
+    actions.setSubmitting(false); // кнопка розблокувалася
   }
 };
 

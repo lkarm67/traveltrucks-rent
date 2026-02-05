@@ -33,7 +33,7 @@ const FiltersBlock = () => {
         <hr className={css.devider} />
         <div className={css.bottonsBox}>
         <button
-          className={filters.AC ? css.active : css.filtersBtn}
+          className={`${css.filtersBtn} ${filters.AC ? css.active : ""}`}
           onClick={() => setFilters({ AC: !filters.AC })}
         >
           <svg className={css.filterIcon} width="32" height="32">
@@ -42,7 +42,7 @@ const FiltersBlock = () => {
           <span>AC</span>
         </button>
         <button
-          className={filters.transmission === "automatic" ? css.active : css.filtersBtn}
+          className={`${css.filtersBtn} ${filters.transmission === "automatic" ? css.active : ""}`}
           onClick={() => setFilters({ transmission: filters.transmission === "automatic" ? undefined : "automatic" })}
         >
           <svg className={css.filterIcon} width="32" height="32">
@@ -51,7 +51,7 @@ const FiltersBlock = () => {
           <span>Automatic</span>
         </button>
         <button
-          className={filters.kitchen ? css.active : css.filtersBtn}
+          className={`${css.filtersBtn} ${filters.kitchen ? css.active : ""}`}
           onClick={() => setFilters({ kitchen: !filters.kitchen })}
         >
           <svg className={css.filterIcon} width="32" height="32">
@@ -60,7 +60,7 @@ const FiltersBlock = () => {
           <span>Kitchen</span>
         </button>
         <button
-          className={filters.TV ? css.active : css.filtersBtn}
+          className={`${css.filtersBtn} ${filters.TV ? css.active : ""}`}
           onClick={() => setFilters({ TV: !filters.TV })}
         >
           <svg className={css.filterIcon} width="32" height="32">
@@ -69,7 +69,7 @@ const FiltersBlock = () => {
           <span>TV</span>
         </button>
         <button
-          className={filters.bathroom ? css.active : css.filtersBtn}
+          className={`${css.filtersBtn} ${filters.bathroom ? css.active : ""}`}
           onClick={() => setFilters({ bathroom: !filters.bathroom })}
         >
           <svg className={css.filterIcon} width="32" height="32">
@@ -85,8 +85,12 @@ const FiltersBlock = () => {
         <hr className={css.devider} />
         <div className={css.bottonsBox}>
         <button
-          className={filters.form === "van" ? css.active : css.filtersBtn}
-          onClick={() => setFilters({ form: "van" })}
+          className={`${css.filtersBtn} ${filters.form === "van" ? css.active : ""}`}
+          onClick={() =>
+            setFilters({
+              form: filters.form === "van" ? "" : "van",
+            })
+          }
         > 
           <svg className={css.filterIcon} width="32" height="32">
             <use href="/icons/sprite.svg#icon-bi_grid-1x2" />
@@ -94,8 +98,12 @@ const FiltersBlock = () => {
           <span>Van</span>
         </button>
         <button
-          className={filters.form === "fully_integrated" ? css.active : css.filtersBtn}
-          onClick={() => setFilters({ form: "fully_integrated" })}
+          className={`${css.filtersBtn} ${filters.form === "fully_integrated" ? css.active : ""}`}
+          onClick={() =>
+            setFilters({
+              form: filters.form === "fully_integrated" ? "" : "fully_integrated",
+            })
+          }
         >
           <svg className={css.filterIcon} width="32" height="32">
             <use href="/icons/sprite.svg#icon-bi_grid-2x2" />
@@ -103,8 +111,12 @@ const FiltersBlock = () => {
           <span>Fully Integrated</span>
         </button>
         <button
-          className={filters.form === "alcove" ? css.active : css.filtersBtn}
-          onClick={() => setFilters({ form: "alcove" })}
+          className={`${css.filtersBtn} ${filters.form === "alcove" ? css.active : ""}`}
+          onClick={() =>
+            setFilters({
+              form: filters.form === "alcove" ? "" : "alcove",
+            })
+          }
         >
           <svg className={css.filterIcon} width="32" height="32">
             <use href="/icons/sprite.svg#icon-bi_grid-3x3" />

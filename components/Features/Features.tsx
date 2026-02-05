@@ -1,5 +1,7 @@
 import css from "./Features.module.css";
 import { Camper } from "@/types/camper";
+import { formatFeature } from "@/utils/formatFeature";
+
 
 type FeaturesProps = {
   camper: Camper;
@@ -101,7 +103,7 @@ const Features = ({ camper }: FeaturesProps) => {
         <ul className={css.detailsList}>
           <li className={css.detailsItem}>
             <span>Form</span>
-            <span className={css.capitalForm}>{camper.form}</span>
+            <span className={css.capitalForm}>{formatFeature(camper.form)}</span>
           </li>
           <li className={css.detailsItem}>
             <span>Length</span>

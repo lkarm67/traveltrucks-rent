@@ -69,24 +69,15 @@
     padding: 0;
     border: none;
     cursor: pointer;
-    width: 24px;
-    height: 24px;
-        /* трохи більше висоти, щоб не обрізало */
-        display: inline-flex;
-        /* центруємо іконку */
-        align-items: center;
-        justify-content: center;
-        overflow: visible;
 }
 
 .heartIcon {
-    display: block;
     width: 24px;
     height: 24px;
     fill: var(--text);
 }
 
-.active {
+.heartBotton.active .heartIcon {
     fill: var(--button);
 }
 

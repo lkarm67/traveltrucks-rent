@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import CamperGridBlock from "@/components/CamperGridBlock/CamperGridBlock";
 import FiltersBlock from "@/components/FiltersBlock/FiltersBlock";
 import LoadMoreBtn from "@/components/LoadMoreBtn/LoadMoreBtn";
+import Loading from "@/app/loading"; 
 import { useCamperStore } from "@/lib/store";
 
 import css from "./catalogPage.module.css";
@@ -19,10 +20,13 @@ const CatalogPage = () => {
     isLoading,
   } = useCamperStore();
 
-  // Завантажуємо лише першу сторінку один раз
   useEffect(() => {
     loadCampers(1);
   }, [loadCampers]);
+
+  if (isLoading && campers.length === 0) {
+    return <Loading />;
+  }
 
   return (
     <div className={css.catalogPage}>
@@ -45,7 +49,9 @@ const CatalogPage = () => {
           <LoadMoreBtn
             onClick={loadMore}
             disabled={isLoading}
-          />
+          >
+            {isLoading ? "Loading..." : "Load more"}
+          </LoadMoreBtn>
         )}
       </section>
     </div>

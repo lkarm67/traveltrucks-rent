@@ -2,7 +2,7 @@
     max-width: 1440px;
     display: flex;
     flex-direction: column;
-    padding: 0 100px;
+    padding: 72px 100px;
     gap: 28px;
 }
 
