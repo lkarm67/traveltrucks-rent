@@ -1,82 +1,74 @@
 .listReviews{
-  display: flex;
-  flex-direction: column;
-  justify-items: start;
-  gap: 44px;
-  max-width: 631px;
-  padding: 0 64px;
+    display: flex;
+    flex-direction: column;
+    justify-items: start;
+    gap: 44px;
+    max-width: 631px;
+    padding: 0 64px;
 }
 
 .noReview{
-  font-family: var(--font-family);
-  font-weight: 600;
-  font-size: 48px;
-  line-height: 67%;
-  color: var(--main);
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 67%;
 }
 
 .itemReview{
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .titleBox{
-  display: flex;
-  flex-direction: row;
-  gap: 16px;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
 }
 
 .avatar{
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: var(--badges);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-family: var(--font-family);
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 133%;
-  color: var(--button);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--badges);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 133%;
+    color: var(--button);
 }
 
 .nameReview{
-  display: flex;
-  flex-direction: column;
-  justify-items: start;
-  padding: 8px 0;
-  gap: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-items: start;
+    padding: 8px 0;
+    gap: 4px;
 }
 
 .name{
-  font-family: var(--font-family);
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 150%;
-  color: var(--main);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
 }
 
 .comment{
-  font-family: var(--font-family);
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 150%;
-  color: var(--text);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--text);
 }
 
 .starFilled {
-  fill: var(--rating);
+    fill: var(--rating);
 }
 
 .starEmpty {
-  fill: var(--badges);
+    fill: var(--badges);
 }
 
 .iconStar {
-  width: 16px;
-  height: 16px;
+    width: 16px;
+    height: 16px;
 }

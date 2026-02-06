@@ -54,7 +54,7 @@ const FormikDatePicker = ({ field, form }: FieldProps) => {
           setFocused(false);
           form.setFieldTouched(field.name, true);
         }}
-        className={`${css.input} ${css.dateInput}`}
+        className={css.input}
         dateFormat="dd/MM/yyyy"
         formatWeekDay={(nameOfDay) => nameOfDay.slice(0, 3)}
         locale={enUS}

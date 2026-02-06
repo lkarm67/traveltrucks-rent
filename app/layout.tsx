@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header/Header";
 import TanStackProvider from "@/components/TanStackProvider/TanStackProvider";
+import { Toaster } from "react-hot-toast"; 
 
 const inter = Inter({
   variable: "--font-inter",
@@ -30,6 +31,19 @@ export default function RootLayout({
           <main className="container">
             {children}
           </main>
+
+          {/* Тостер глобально */}
+          <Toaster
+            position="top-right"
+            toastOptions={{
+              duration: 2000,
+              style: {
+                background: "#101828",
+                color: "#fff",
+                borderRadius: "12px",
+              },
+            }}
+          />
         </TanStackProvider>
       </body>
     </html>

@@ -3,7 +3,7 @@
     flex-direction: column;
     padding-top: 52px;
     width: 360px; 
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .locationBox{
@@ -13,24 +13,23 @@
     margin-bottom: 36px;
 }
 .locationLabel{
-    font-family: var(--font-family);
-font-weight: 400;
-font-size: 16px;
-line-height: 150%;
-color: var(--gray);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--gray);
 }
 
 .inputBox{
     border-radius: 12px;
-padding: 18px 20px;
-width: 360px;
-height: 56px;
-display: flex;
-flex-direction: row;
-align-items: center;
-gap: 8px;
-background-color: var(--inputs);
-color: var(--gray);
+    padding: 18px 20px;
+    width: 360px;
+    height: 56px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--inputs);
+    color: var(--gray);
 }
 
 .mapIcon{
@@ -38,14 +37,13 @@ color: var(--gray);
 }
 
 .locationInput{
-    font-family: var(--font-family);
-font-weight: 400;
-font-size: 16px;
-line-height: 150%;
-color: var(--gray);
-border: none;
-background-color: transparent;
-padding: 2px 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--gray);
+    border: none;
+    background-color: transparent;
+    padding: 2px 0;
 }
 
 .locationInput:focus{
@@ -54,12 +52,11 @@ padding: 2px 0;
 }
 
 .filtersText{
-    font-family: var(--font-family);
-font-weight: 500;
-font-size: 16px;
-line-height: 150%;
-color: var(--text);
-margin-bottom: 36px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--text);
+    margin-bottom: 36px;
 }
 
 .filtersBox{
@@ -71,7 +68,7 @@ margin-bottom: 36px;
 
 .devider{
     stroke-width: 1px;
-stroke: var(--gray-light);
+    stroke: var(--gray-light);
 }
 
 .bottonsBox{
@@ -90,16 +87,14 @@ stroke: var(--gray-light);
     height: 96px;
     gap: 8px;
     border: 1px solid var(--gray-light);
-    border-radius: 12px;
     background-color: var(--white);
-    color: var(--main);
-    font-family: var(--font-family);
-font-weight: 500;
-font-size: 16px;
-line-height: 150%;
-letter-spacing: -0.01em;
-text-align: center;
-flex-shrink: 0;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    text-align: center;
+    flex-shrink: 0;
 }
 
 .filtersBtn.active{
@@ -108,8 +103,8 @@ flex-shrink: 0;
 }
 
 .filtersBtn:focus-visible {
-  outline: none;
-  border: 1px solid var(--button);
+    outline: none;
+    border: 1px solid var(--button);
 }
 
 .filterIcon{
