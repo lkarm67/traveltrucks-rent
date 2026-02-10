@@ -56,6 +56,11 @@ p {
     margin: 0;
 }
 
+button {
+  font-family: inherit;
+  color: inherit;
+}
+
 .buttonAnchor {
     display: inline-flex;
     align-self: flex-start;
