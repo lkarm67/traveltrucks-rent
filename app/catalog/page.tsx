@@ -4,9 +4,8 @@ import { useEffect } from "react";
 import CamperGridBlock from "@/components/CamperGridBlock/CamperGridBlock";
 import FiltersBlock from "@/components/FiltersBlock/FiltersBlock";
 import LoadMoreBtn from "@/components/LoadMoreBtn/LoadMoreBtn";
-import Loading from "@/app/loading"; 
+import Loading from "@/app/loading";
 import { useCamperStore } from "@/lib/store";
-
 import css from "./catalogPage.module.css";
 
 const CatalogPage = () => {

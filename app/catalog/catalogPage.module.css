@@ -1,4 +1,63 @@
-.catalogPage{
+/* Базова мобільна версія (sidebar під контентом) */
+.catalogPage {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 16px 0 16px;
+    gap: 32px;
+}
+
+.sidebar,
+.mainCatalog {
+    width: 100%;
+    max-width: 888px;
+    /* обмежуємо ширину, щоб не “липло” */
+}
+
+.sidebar {
+    margin: 0 auto;
+    /* центр по горизонталі */
+    order: 1;
+    /* завжди першим */
+}
+
+.mainCatalog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    /* відступ між переліком та кнопкою */
+    order: 2;
+    /* йде після sidebar */
+    margin-bottom: 40px;
+}
+
+@media screen and (min-width: 1440px) {
+    .catalogPage {
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 72px 64px 0 64px;
+        gap: 64px;
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+
+    .sidebar {
+        max-width: 360px;
+        flex-shrink: 0;
+    }
+
+    .mainCatalog {
+        max-width: 888px;
+        gap: 80px;
+        margin-bottom: 60px;
+        flex-grow: 1;
+    }
+}
+
+/*.catalogPage{
     max-width: 1440px;
     margin: 0 auto;
     display: flex;
@@ -20,4 +79,4 @@
     align-items: center;  
     gap: 80px;  
     margin-bottom: 60px;
-}
+}*/

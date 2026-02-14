@@ -1,4 +1,97 @@
-.heroBlock{
+.heroBlock {
+    position: relative;
+    width: 100%;
+    min-height: 100svh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.heroImage {
+    z-index: 0;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.heroContent {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    max-width: 600px;
+    animation: fadeInUp 1s ease forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.heroTitle {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 1.2;
+    color: var(--inputs);
+}
+
+.heroDescription {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.4;
+    color: var(--inputs);
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        padding: 0 32px;
+    }
+
+    .heroTitle {
+        font-size: 40px;
+    }
+
+    .heroDescription {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .container {
+        max-width: 1440px;
+        padding: 0 64px;
+    }
+
+    .heroTitle {
+        font-size: 48px;
+    }
+
+    .heroDescription {
+        font-size: 24px;
+    }
+}
+
+
+
+
+
+
+/*.heroBlock{
     background-image: url('/images/hero-img-1x.jpg');
     background-size: cover;
     background-position: center;
@@ -40,3 +133,4 @@
     color: var(--inputs);
 }
 
+*/
