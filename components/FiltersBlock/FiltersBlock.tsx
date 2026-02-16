@@ -6,6 +6,18 @@ import css from "./FiltersBlock.module.css";
 const FiltersBlock = () => {
   const { filters, setFilters, loadCampers } = useCamperStore();
 
+  const resetFilters = () => {
+    setFilters({
+      AC: false,
+      transmission: undefined,
+      kitchen: false,
+      TV: false,
+      bathroom: false,
+      form: "",
+      // location залишається без змін
+    });
+  };
+  
   return (
     <div className={css.filtersContainer}>
       <div className={css.locationBox}>
@@ -31,7 +43,7 @@ const FiltersBlock = () => {
       <div className={css.filtersBox}>
         <h3 className={css.filtersTitle}>Vehicle equipment</h3>
         <hr className={css.devider} />
-        <div className={css.bottonsBox}>
+        <div className={css.buttonsBox}>
         <button
           className={`${css.filtersBtn} ${filters.AC ? css.active : ""}`}
           onClick={() => setFilters({ AC: !filters.AC })}
@@ -83,7 +95,7 @@ const FiltersBlock = () => {
       <div className={css.typesBox}>
         <h3 className={css.filtersTitle}>Vehicle type</h3>
         <hr className={css.devider} />
-        <div className={css.bottonsBox}>
+        <div className={css.buttonsBox}>
         <button
           className={`${css.filtersBtn} ${filters.form === "van" ? css.active : ""}`}
           onClick={() =>
@@ -126,13 +138,22 @@ const FiltersBlock = () => {
         </div>
       </div>
 
-      <button
-        type="button"
-        className="buttonAnchor"
-        onClick={() => loadCampers()}
-      >
-        Search
-      </button>
+      <div className={css.searchResetBox}>
+        <button
+          type="button"
+          className="buttonAnchor"
+          onClick={() => loadCampers()}
+        >
+          Search
+        </button>
+        <button
+          type="button"
+          className={css.resetFiltersBtn}
+          onClick={resetFilters}
+        >
+          Reset Filters
+        </button>        
+      </div>
     </div>
   );
 };

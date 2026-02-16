@@ -187,7 +187,7 @@
     stroke: none;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 888px) {
     .camperCard {
         padding: 20px;
         max-width: 888px;

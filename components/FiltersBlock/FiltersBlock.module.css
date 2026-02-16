@@ -1,9 +1,11 @@
 .filtersContainer{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     padding-top: 52px;
     width: 360px; 
     box-sizing: border-box;
+    margin: 0 auto;
 }
 
 .locationBox{
@@ -71,7 +73,7 @@
     stroke: var(--gray-light);
 }
 
-.bottonsBox{
+.buttonsBox{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -120,3 +122,29 @@
     margin-bottom: 40px;
 }
 
+.searchResetBox{
+    display: flex;
+    gap: 12px;
+    justify-content: space-between;
+}
+
+.resetFiltersBtn{
+     border: 1px solid var(--gray-light);
+    border-radius: 200px;
+    background-color: var(--white);
+    padding: 16px 32px;
+    width: 156px;
+    height: 56px;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    padding: 16px 30px;
+    cursor: pointer;
+}
+
+.resetFiltersBtn:hover,
+.resetFiltersBtn:focus{
+    border: 1px solid var(--button-hover);
+}
