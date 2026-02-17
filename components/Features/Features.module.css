@@ -5,7 +5,7 @@
     width: 100%;
     background-color: var(--inputs);
     border-radius: 10px;
-    padding: 44px 40px 44px 12px;
+    padding: 44px 24px;
     gap: 48px;
     margin-right: 40px;
 }
