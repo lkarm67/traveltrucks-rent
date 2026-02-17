@@ -4,7 +4,13 @@
     justify-items: start;
     gap: 44px;
     max-width: 631px;
-    padding: 0 64px;
+    padding: 0 24px;
+}
+
+@media (min-width: 768px) {
+    .listReviews{
+        padding: 0 64px;
+    }    
 }
 
 .noReview{
