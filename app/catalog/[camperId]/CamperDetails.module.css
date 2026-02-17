@@ -2,7 +2,7 @@
   width: 100%;
   max-width: 768px;
   margin: 0;
-  padding: 0 64px 50px 64px; /* mobile padding */
+  padding: 0 8px 50px 64px; /* mobile padding */
 }
 
 /* ===== MOBILE ===== */
@@ -16,6 +16,10 @@
 
 /* ===== TABLET ===== */
 @media (min-width: 768px) {
+  .camperDetailsWrapper {
+    padding: 0 64px 50px 64px;
+  }
+  
   .contentGrid {
     gap: 32px;
   }
