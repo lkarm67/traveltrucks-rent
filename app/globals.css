@@ -97,3 +97,7 @@ img {
     height: auto;
 }
 
+.noScroll {
+  overflow: hidden;
+  height: 100vh;
+}
