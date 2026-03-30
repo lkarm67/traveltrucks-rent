@@ -13,8 +13,32 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "TravelTrucks",
   description: "Campers for rent for your adventure",
+
   icons: {
     icon: "/images/favicon.png",
+  },
+
+  openGraph: {
+    title: "TravelTrucks",
+    description: "Campers for rent for your adventure",
+    url: "https://traveltrucks-rent.vercel.app",
+    siteName: "TravelTrucks",
+    images: [
+      {
+        url: "https://traveltrucks-rent.vercel.app/preview-camper.png",
+        width: 1200,
+        height: 630,
+        alt: "Travel camper",
+      },
+    ],
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "TravelTrucks",
+    description: "Campers for rent for your adventure",
+    images: ["https://traveltrucks-rent.vercel.app/preview-camper.png"],
   },
 };
 
