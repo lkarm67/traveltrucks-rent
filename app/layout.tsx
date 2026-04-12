@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: "TravelTrucks",
-    description: "Campers for rent for your adventure",
+    description: "Web application for renting travel trucks with advanced filtering, booking functionality, and a user-friendly interface built with modern frontend technologies.",
     url: "https://traveltrucks-rent.vercel.app",
     siteName: "TravelTrucks",
     images: [
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "TravelTrucks",
-    description: "Campers for rent for your adventure",
+    description: "Web application for renting travel trucks with advanced filtering, booking functionality, and a user-friendly interface built with modern frontend technologies.",
     images: ["https://traveltrucks-rent.vercel.app/preview-camper.png"],
   },
 };
